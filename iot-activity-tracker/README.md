@@ -1,7 +1,7 @@
 iot-activity-tracker
 ====================
 
-1. Ingest IoT data over HTTP
+1. Ingest IoT data through HTTP
     1. Open HTTP server on port 5001 and listen for HTTP `POST` requests.
     2. Add HTTP headers (`sensor`) to flowFile attributes. 
     2. Publish HTTP payload to **EventBus**'s dynamic address `iot.in.${sensor}`.
@@ -18,7 +18,8 @@ iot-activity-tracker
     1. Send `Inactivity Message` when there is no IoT data in the flow for 5 min.
     2. Send `Activity Restored Message` when new IoT data received after inactivity event. 
     3. Client UI can subscript to `Inactivity` events and show graphical status. 
-       
+     
+Dependency you need to download nifi below release this can be prepared by docker containers     
 Note: this flow depends on **nifi-websocket** module, download [nar](https://github.com/xmlking/nifi-websocket/releases/download/0.1.0/nifi-websocket-0.1.0-SNAPSHOT.nar) and copy to `$NIFI_HOME/lib`
 
 ### Run
@@ -36,3 +37,4 @@ curl ....
 ![logs dataflow](./iot-flow.png)
 
 ### Reference 
+Happy learning still i am trying to improve this flow your advise can make this great
